@@ -22,18 +22,16 @@ jobs:
           script: |
             echo "🚀 Deploy iniciado"
 
-            # Clonar o actualizar repo
             if [ ! -d "demo-devops-ec2" ]; then
               git clone https://github.com/cbugueno-duoc/demo-devops-ec2.git
             fi
 
             cd demo-devops-ec2
-            git pull origin main
 
-            # Copiar a Apache
+            git fetch origin
+            git reset --hard origin/main
+
             sudo cp index.html /var/www/html/index.html
-
-            # Reiniciar Apache
             sudo systemctl restart httpd
 
             echo "✅ Deploy terminado"
