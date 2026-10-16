@@ -22,11 +22,11 @@ jobs:
           script: |
             echo "🚀 Deploy iniciado"
 
-            if [ ! -d "[CAMBIAR A NOMBRE PROYECTO]" ]; then
-              git clone [URL_PROYECTO_GIT]
+            if [ ! -d "demo-devops-ec2" ]; then
+              git clone https://github.com/cbugueno-duoc/demo-devops-ec2.git
             fi
 
-            cd [CAMBIAR A NOMBRE PROYECTO]
+            cd demo-devops-ec2
 
             git fetch origin
             git reset --hard origin/main
